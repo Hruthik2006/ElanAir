@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dbahome.css">
+    <link rel="icon" type="image/png" href="src/favicon.png">
+    <meta name="description" content="Élan Air is a travel booking website that allows users to book flights, hotels, and other travel services.">
+    <meta name="keywords" content="travel, booking, flights, hotels, travel services, Élan Air">
+    <title>DB Admin AirAgency</title>
+</head>
+<body>
+    <a name="top"></a>
+    <video class="video-background" autoplay muted loop reversed>
+        <source src="src/oldPlane.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+    </video>
+    <a href="#top"><button class="floating-btn" id="floating-btn">&uarr;</button></a>
+    <div class="navbar" id="navbar">
+        <p class="brand-logo"><img src="src/Airplane.svg" alt="" width="50px" height="50px"></p>
+        <h1 class="brand-name">DB Admin | Élan Air</h1>
+        <div class="clockcontainer">IN<div id="clock" class="clock" title="IST"></div></div>
+    </div>
+    <div class="main-container">
+        <div class="info">
+            <h1>Welcome to DB Admin</h1>
+            <p>This is a database admin page for managing flight data.</p>
+            <p>Use the links to navigate to different sections of the application.</p>
+            <p>Click <a href="src/schema.png" target="_blank">here</a> to view schema diagram</p><br>
+            <a href="home.html"><p class="back-btn">Log out</p></a>
+        </div>
+        <div class="menu-bar" id="menu-bar">
+            <a href="#aircraft-form"><p>Aircrafts</p></a>
+            <a href="#flight-form"><p>Flight</p></a>
+            <a href="#airport-form"><p>Airports</p></a>
+            <a href="#crew-form"><p>Crew</p></a>
+            <a href="#pilot-form"><p>Pilots</p></a>
+            <a href="#customquery-form"><p>Custom Queries</p></a>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="aircraft-form" id="aircraft-form">
+            <h2>Aircraft Form</h2>
+            <form action="dbahome.html" method="post" id="aircraftform">
+                <label for="aircraftid">Aircraft ID:</label>
+                &nbsp;<input type="text" id="aircraftid" name="aircraftid" required>
+                &nbsp;&nbsp;&nbsp;&ThickSpace;&thinsp;<label for="aircraftmodel">Model:</label>
+                &nbsp;<input type="text" id="aircraftmodel" name="aircraftmodel" required><br>
+                <label for="aircraftmanufacturer">Manufacturer:</label>
+                &nbsp;&nbsp;<input type="text" id="aircraftmanufacturer" name="aircraftmanufacturer" required>
+                &nbsp;&nbsp;<label for="aircraftcapacity">Total Capacity:</label>
+                &nbsp;<input type="number" id="aircraftcapacity" name="aircraftcapacity" value="250" required><br>
+                <label for="aircraftfirstclasscap">First Class Capacity:</label>
+                &nbsp;<input type="number" id="aircraftfirstclasscap" name="aircraftfirstclasscap" value="40" required>
+                &nbsp;&nbsp;<label for="aircraftbusinessclasscap">Business Class Capacity:</label>
+                &nbsp;<input type="number" id="aircraftbusinessclasscap" name="aircraftbusinessclasscap" value="50" required><br>
+                <label for="aircraftpremiumecoclasscap">Premium Eco. Class Capacity:</label>
+                &nbsp;<input type="number" id="aircraftpremiumecoclasscap" name="aircraftpremiumecoclasscap" value="70" required>
+                &nbsp;&nbsp;<label for="aircrafteconomyclasscap">Economy Class Capacity:</label>
+                &nbsp;<input type="number" id="aircrafteconomyclasscap" name="aircrafteconomyclasscap" value="90" required><br><br>
+                <button type="reset">Reset</button>
+                <button type="submit">Append</button>
+                <button type="button" onclick="fetchWholeTable('aircraft')">Fetch</button>
+            </form>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="flight-form" id="flight-form">
+            <h2>Flight Form</h2>
+            <form action="dbahome.html" method="post" id="flightform">
+                <label for="flightid">Flight ID:</label>
+                &nbsp;<input type="text" id="flightid" name="flightid" placeholder="" required/>
+                &nbsp;&nbsp;<label for="flightaircraftid">Aircraft ID:</label>
+                &nbsp;<input type="text" id="flightaircraftid" name="flightaircraftid" required><br>
+                <label for="flightorigin">Origin:</label>
+                &nbsp;<input type="text" id="flightorigin" name="flightorigin" required>
+                &nbsp;&nbsp;<label for="flightdestination">Destination:</label>
+                &nbsp;<input type="text" id="flightdestination" name="flightdestination" required><br>
+                <label for="flightdeparturedate">Departure Date:</label>
+                &nbsp;<input type="date" id="flightdeparturedate" name="flightdeparturedate" title="select date" required>
+                <label for="flightdeparturetime">Departure Time:</label>
+                &nbsp;<input type="time" id="flightdeparturetime" name="flightdeparturetime" required><br>
+                <label for="flightfirstclassprice">First Class Price:</label>
+                &nbsp;<input type="number" id="flightfirstclassprice" name="flightfirstclassprice" required>
+                &nbsp;&nbsp;<label for="flightbusinessclassprice">Business Class Price:</label>
+                &nbsp;<input type="number" id="flightbusinessclassprice" name="flightbusinessclassprice" required><br>
+                <label for="flightpremiumecoclassprice">Premium Eco. Class Price:</label>
+                &nbsp;<input type="number" id="flightpremiumecoclassprice" name="flightpremiumecoclassprice" required>
+                &nbsp;&nbsp;<label for="flighteconomyclassprice">Economy Class Price:</label>
+                &nbsp;<input type="number" id="flighteconomyclassprice" name="flighteconomyclassprice" required><br><br><br>
+                <button type="reset">Reset</button>
+                <button type="submit">Append</button>
+                <button type="button" onclick="fetchWholeTable('flight')">Fetch</button>
+            </form>
+        </div>
+    </div>
+    <div class="container3">
+        <div class="airport-form" id="airport-form">
+            <h2>Airport Form</h2>
+            <form action="dbahome.html" method="post" id="airportform">
+                &nbsp;&nbsp;<label for="airportid">Airport ID:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="airportid" name="airportid" required><br>
+                &nbsp;&nbsp;<label for="airportname">Name:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="airportname" name="airportname" required><br>
+                &nbsp;&nbsp;<label for="airportcity">City:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="airportcity" name="airportcity" required><br>
+                &nbsp;&nbsp;<label for="airportcountry">Country:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="airportcountry" name="airportcountry" required><br><br>
+                <button type="reset">Reset</button>
+                <button type="submit">Append</button>
+                <button type="button" onclick="fetchWholeTable('airport')">Fetch</button>
+            </form>
+        </div>
+        <div class="crew-form" id="crew-form">
+            <h2>Crew Form</h2>
+            <form action="dbahome.html" method="post" id="crewform">
+                &nbsp;&nbsp;<label for="crewid">Crew ID:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="crewid" name="crewid" required><br>
+                &nbsp;&nbsp;<label for="crewfirstname">First name:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="crewfirstname" name="crewfirstname" required><br>
+                &nbsp;&nbsp;<label for="crewlastname">Last name:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="crewlastname" name="crewlastname" required><br>
+                &nbsp;&nbsp;<label for="crewrole">Role:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="crewrole" name="crewrole" required><br>
+                &nbsp;&nbsp;<label for="crewcontact">Contact:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" id="crewcontact" name="crewcintact" required><br><br>
+                <button type="reset">Reset</button>
+                <button type="submit">Append</button>
+                <button type="button" onclick="fetchWholeTable('crew')">Fetch</button>
+            </form>
+        </div>
+        <div class="pilot-form" id="pilot-form">
+            <h2>Pilot Form</h2>
+            <form action="dbahome.html" method="post" id="pilotform">
+                &nbsp;&nbsp;<label for="pilotflightid">Flight ID:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="pilotflightid" name="pilotflightid" required><br>
+                &nbsp;&nbsp;<label for="pilotcrewid">Crew ID:</label><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="pilotcrewid" name="pilotcrewid" required><br><br>
+                <button type="reset">Reset</button>
+                <button type="submit">Append</button>
+                <button type="button" onclick="fetchWholeTable('pilot')">Fetch</button>
+            </form>
+        </div>
+    </div>
+    <div class="container4">
+        <div class="customquery-form" id="customquery-form">
+            <h2>Custom Queries</h2>
+            <form action="dbahome.html" method="post">
+                <label for="customquery">Query:</label><br>
+                &nbsp;&nbsp;<textarea name="customquery" id="customquery-query" cols="60" rows="12" spellcheck="true" placeholder="Enter your queries." required></textarea><br><br>
+                <label for="customquerycheckbox">Only SELECT statements &rightarrow;</label>
+                <input type="checkbox" name="customquerycheckbox" id="customquerycheckbox" checked><br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="reset">Reset</button>
+                <button type="button" onclick="fetchcustom()">RUN</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="result-popup" class="result-popup">
+        <div class="result-popup-content">
+          <span onclick="document.getElementById('result-popup').style.display='none', clearlist()" class="result-popup-close">&thinsp;&times;</span>
+          <h2>Results</h2>
+          <p id="result-list"></p>
+        </div>
+    </div>
+
+    <script src="dbahome.js"></script>
+</body>
+</html>

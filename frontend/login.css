@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Wavefont:wght@4..1000&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    cursor: url("src/cursor.cur") 0 0, auto;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    filter: blur(0px);
+    transform: scale(1.05);
+}
+
+.navbar {
+    z-index: 1;
+    color: white;
+    height: 50px;
+    margin-top: 10px;
+    width: 97%;
+    margin-left: 1.5%;
+    align-items: start;
+}
+
+img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.brand-name {
+    font-size: 2em;
+    margin-top: -50px;
+    color: #ffffff;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-optical-sizing: auto;
+    width: 20%;
+    float: right;
+    margin-right: 35%;
+}
+
+.wave-brand-name {
+    text-align: right;
+    width: 5em;
+    height: auto;
+    color: #ffffff;
+    font-size: 60px;
+    font-family: "Wavefont", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: regular;
+    font-variation-settings:
+        "ROND" 100,
+        "YELA" -100;
+    margin-top: -90px;
+    margin-right: -800px;
+    float: right;
+}
+
+.container {
+    align-content: center;
+    margin-top: 150px;
+}
+
+.login-form {
+    text-align: center;
+    width: 30%;
+    height: 50%;
+    border: #000000 1px solid;
+    border-radius: 50px;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
+    float: left;
+    margin-left: 280px;
+}
+
+.signup-form {
+    text-align: center;
+    width: 30%;
+    height: 50%;
+    border: #000000 1px solid;
+    border-radius: 50px;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
+    float: right;
+    margin-right: 280px;
+}
+
+.login-innerform {
+    margin-top: 85px;
+}
+
+.signup-innerform {
+    margin-top: 30px;
+}
+
+#countrycode {
+    width: 40px;
+}
+#countrycode:hover {
+    cursor: url("src/cursor.cur") 0 0 , auto;
+}
+
+#contact {
+    width: 130px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+button {
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+}
+
+button:hover {
+    cursor: url("src/hovercursor.cur") 0 0 , auto;
+    transition: 0.25s;
+    transform: scale(1.2);
+}
