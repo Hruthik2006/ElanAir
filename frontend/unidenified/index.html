@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>AirAgency</title>
+</head>
+<body>
+    <img src="src/Airplane.png" alt="Logo" class="logo" />
+    <form target="_self" action="home.html">
+        <div class="form-structor">
+            <div class="signup">
+                <h2 class="form-title" id="signup"><span>or</span>Sign up</h2>
+                <div class="form-holder">
+                    <input type="text" class="input" placeholder="Name" required/>
+                    <!--
+                    <input type="text" class="input" placeholder="Passport number" required/>
+                    <input type="number" class="input" placeholder="Phone number" minlength="10" maxlength="10" size="10" required/>
+                    -->
+                    <input type="email" class="input" placeholder="Email" required pattern="^[a-zA-Z]{2,}\.*[a-zA-Z]*\.*[0-9]*[a-zA-Z]*[@][a-zA-Z]+\.{1}[a-zA-Z]+$"/>
+                    <input type="password" class="input" placeholder="Password" required/>
+                </div>
+                <button class="submit-btn" type="submit">Sign up</button>
+            </div>
+            <div class="login slide-up">
+                <div class="center">
+                    <h2 class="form-title" id="login"><span>or</span>Log in</h2>
+                    <div class="form-holder">
+                        <input type="email" class="input" placeholder="Email" required pattern="^[a-zA-Z]{2,}\.*[a-zA-Z]*\.*[0-9]*[a-zA-Z]*[@][a-zA-Z]+\.{1}[a-zA-Z]+$"/>
+                        <input type="password" class="input" placeholder="Password" required/>
+                    </div>
+                    <button class="submit-btn" type="submit">Log in</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="signup.js"></script>
+</body>
+</html>

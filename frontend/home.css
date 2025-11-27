@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Doto:wght@100..900&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+    cursor: url("src/dotcursor.cur") 0 0, auto;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    filter: blur(0px);
+    transform: scale(1.05);
+}
+
+.navbar {
+    z-index: 1;
+    color: white;
+    height: 50px;
+    margin-top: 10px;
+    width: 97%;
+    margin-left: 1.5%;
+    align-items: start;
+}
+
+.brand-name {
+    font-size: 2em;
+    margin-top: 7.5px;
+    color: #ffffff;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-optical-sizing: auto;
+    width: 20%;
+    float: right;
+    margin-right: 37%;
+}
+
+.clockcontainer {
+    width: 5em;
+    height: 50px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-optical-sizing: auto;
+    margin-top: 16px;
+    margin-right: -830px;
+    float: right;
+}  
+
+.clock {
+    float: right;
+}
+
+.menu {
+    width: 5%;
+    margin-top: -5px;
+    margin-left: 12px;
+    padding: 5px;
+    padding-left: 25px;
+    border-radius: 50px;
+    float: left;
+}
+
+.menu img {
+    border-radius: 50%;
+}
+
+.menu:hover {
+    cursor: url("src/dotcursor.cur"), auto;
+    /*
+    cursor: url("src/hoverdotcursor.cur") 0 0, auto;
+    background-color: rgba(0, 0, 0, 0);
+    rotate: 360deg;
+    transition: 3s;
+    */
+}
+
+.menu-bar {
+    width: 20%;
+    height: 70%;
+    margin-left: 1.5%;
+    margin-top: 10%;
+    align-content: top;
+}
+
+.menu-bar p {
+    width: 28%;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-size: 1em;
+    color: white;
+    /*
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(1px);
+    */
+    border: #c4c2c2 0.1px solid;
+    padding: 5px;
+    padding-left: 30px;
+    border-radius: 50px;
+}
+
+.aboutus {
+    margin-top: 130%;
+}
+
+.menu-bar a {
+    text-decoration: none;
+    display: block;
+    width: 122.61px;
+}
+
+.menu-bar p {
+    width: 90px;
+}
+
+.menu-bar p:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: url("src/hoverdotcursor.cur") 0 0, auto;
+    color: black;
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    transition: 0.25s;
+    transform: scale(1.2);
+}
+
+.content {
+    float: right;
+    margin-top: -50px;
+    margin-right: 20px;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-size: 1em;
+    color: white;
+}
+
+
+
+.ticket-popup, .track-popup, .journey-popup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-optical-sizing: auto;
+    color: rgb(0, 0, 0);
+    box-shadow: #c4c2c2 0.1px 0.1px 10px;
+}
+
+.ticket-popup-content, .track-popup-content {
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 7.5%;
+    margin-left: 22.5%;
+    padding: 20px;
+    width: 50%;
+    height: 500px;
+    border-radius: 10px;
+    border: #ffffff 2px solid;
+}
+
+.journey-popup-content {
+    background-color: rgba(255,255,255,0.5);
+    margin-top: 7.5%;
+    margin-left: 12%;
+    padding: 20px;
+    width: 70%;
+    height: 500px;
+    border-radius: 10px;
+    border: #ffffff 2px solid;
+}
+  
+.ticket-popup-close, .track-popup-close, .journey-popup-close {
+    float: right;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: rgb(255, 255, 255) 0.5px solid;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 80px;
+}
+
+.ticket-popup-close:hover, .track-popup-close:hover, .journey-popup-close:hover {
+    background-color: rgb(0, 0, 0, 0.5);
+    color: white;
+}
+
+.ticket-popup-content h2, .track-popup-content h2, .journey-popup-content h2 {
+    text-align: center;
+}
+
+.ticket-form {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.track-form {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.ticket-form input {
+    border-radius: 5px;
+    width: 30%;
+    padding: 8px;
+    margin: 3px;
+}
+
+.ticket-form input:hover {
+    cursor: pointer;
+}
+
+.ticket-form select {
+    border-radius: 5px;
+    width: 32.5%;
+    padding: 8px;
+    margin: 3px;
+    border: #000000 1px solid;
+}
+
+.track-form input {
+    border-radius: 5px;
+    width: 30%;
+    padding: 10px;
+    margin: 3px;
+}
+
+#track-bookingid {
+    border-radius: 5px;
+    width: 33.1%;
+    padding: 10px;
+    margin: 3px;
+    border: #000000 0.1px solid;
+}
+
+.track-form input:hover {
+    cursor: pointer;
+}
+
+button {
+    border-radius: 5px;
+    padding: 8px;
+    width: 100px;
+    color: white;
+    background-color: rgb(45, 44, 44);
+}
+
+button:hover {
+    cursor: url("src/hoverdotcursor.cur") 0 0 , auto;
+    transition: 0.25s;
+    transform: scale(1.2);
+}
+
+#track-fetch {
+    border-radius: 5px;
+    padding: 8px;
+    width: 150px;
+    color: white;
+    background-color: rgb(45, 44, 44);
+}
+
+#track-fetch:hover {
+    cursor: url("src/hoverdotcursor.cur") 0 0 , auto;
+    transition: 0.25s;
+    transform: scale(1.2);
+}
+
+.date {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+#ticket-date {
+    width: 14%;
+}
+
+.boarding-pass-container {
+    position: fixed;
+    align-content: top;
+    top: 12em;
+    width: 67em;
+    height: 22em;
+    font-family: "Doto", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    color: white;
+}
+
+.boarding-pass-img {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    border: #000000 0.1px solid;
+    z-index: -1;
+}
+
+#boarding-pass-name {
+    position: absolute;
+    width: 170px;
+    font-size: 19px;
+    font-weight: 600;
+    top: 71.5px;
+    right: 160px;
+    word-wrap: break-word;
+}
+
+#boarding-pass-flight {
+    position: absolute;
+    width: 170px;
+    font-size: 18px;
+    font-weight: 600;
+    top: 155px;
+    right: 160px;
+    word-wrap: break-word;
+}
+
+#boarding-pass-from {
+    position: absolute;
+    width: 200px;
+    font-size: 28px;
+    font-weight: 800;
+    bottom: -20px;
+    left: 130px;
+    text-decoration: dashed underline;
+    text-underline-offset: 3px;
+}
+
+#boarding-pass-to {
+    position: absolute;
+    width: 200px;
+    font-size: 28px;
+    font-weight: 800;
+    bottom: -20px;
+    left: 400px;
+    text-decoration: dotted underline;
+    text-underline-offset: 3px;
+}
+
+#boarding-pass-date {
+    position: absolute;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 500;
+    bottom: 68px;
+    right: 210px;
+}
+
+#boarding-pass-time {
+    position: absolute;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 500;
+    bottom: 68px;
+    right: 75px;
+}
+
+#boarding-pass-gate {
+    position: absolute;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+    bottom: -8px;
+    right: 210px;
+    word-wrap: break-word;
+}
+
+#boarding-pass-seat {
+    position: absolute;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 500;
+    bottom: 11px;
+    right: 45px;
+    word-wrap: break-word;
+}
+
+.qrcode {
+    position: absolute;
+    bottom: 160px;
+    right: 20px;
+    border: #a3a3a3 0.001px;
+    border-style: dashed;
+}

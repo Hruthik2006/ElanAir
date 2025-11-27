@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    filter: blur(0px);
+    transform: scale(1.05);
+}
+
+.navbar {
+    z-index: 1;
+    color: white;
+    height: 50px;
+    margin-top: 10px;
+    width: 97%;
+    margin-left: 1.5%;
+    align-items: start;
+    position: fixed;
+    border: #c4c2c2 1px solid;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.brand-name {
+    font-size: 2em;
+    margin-top: 8px;
+    color: #ffffff;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-optical-sizing: auto;
+    width: 28%;
+    float: right;
+    margin-right: 35%;
+}
+
+.brand-logo {
+    width: 5%;
+    margin-top: -5px;
+    padding: 5px;
+    padding-left: 0.5px;
+    border-radius: 50px;
+    float: left;
+}
+
+.brand-logo img {
+    border-radius: 50%;
+}
+
+.brand-logo:hover {
+    cursor: auto;
+    /*
+    cursor: url("src/hoverdotcursor.cur") 0 0, auto;
+    background-color: rgba(0, 0, 0, 0);
+    rotate: 360deg;
+    transition: 3s;
+    */
+}
+
+.login-form {
+    text-align: center;
+    width: 30%;
+    height: 50%;
+    border: #000000 1px solid;
+    border-radius: 50px;
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(2.5px);
+    backdrop-filter: blur(2.5px);
+    float: left;
+    margin-left: 525px;
+    margin-top: 200px;
+}
+
+.login-innerform {
+    margin-top: 85px;
+}
+
+input {
+    border-radius: 5px;
+    padding: 5px;
+    margin: 3px;
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+button {
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+}
+
+button:hover {
+    transition: 0.25s;
+    transform: scale(1.2);
+}
